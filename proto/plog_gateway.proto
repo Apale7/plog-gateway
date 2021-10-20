@@ -1,0 +1,19 @@
+syntax = "proto3";
+package plog_gateway;
+
+message Log{
+    string message = 1;
+}
+
+message UploadLogRequest{
+    Log log = 1;
+}
+
+message UploadLogResponse{
+    int32 code = 1;
+    string msg = 2;
+}
+
+service PLogGateway{
+    rpc UploadLog(UploadLogRequest) returns(UploadLogResponse) {}
+}
