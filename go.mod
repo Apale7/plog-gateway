@@ -3,7 +3,11 @@ module plog_gateway
 go 1.16
 
 require (
+	github.com/Shopify/sarama v1.30.0
+	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/golang/protobuf v1.5.2
+	github.com/onsi/ginkgo v1.16.5 // indirect
+	github.com/onsi/gomega v1.16.0 // indirect
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/viper v1.9.0
 	go.mongodb.org/mongo-driver v1.7.3

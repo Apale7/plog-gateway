@@ -6,5 +6,6 @@ import (
 )
 
 func UploadLog(ctx context.Context, req *plog_gateway.UploadLogRequest) (resp *plog_gateway.UploadLogResponse, err error) {
+	service.U
 	return nil, nil
 }
