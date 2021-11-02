@@ -13,6 +13,11 @@ var (
 	Address = []string{"localhost:9092"}
 )
 
+func main() {
+	syncProducer(Address)
+}
+
+// 同步消息模式
 func syncProducer(address []string) {
 	config := sarama.NewConfig()
 	config.Producer.Return.Successes = true
@@ -97,4 +102,4 @@ func SaramaProducer() {
 	}
 }
 
-//https://blog.csdn.net/bingfeilongxin/article/details/87454078
+// https://blog.csdn.net/bingfeilongxin/article/details/87454078
