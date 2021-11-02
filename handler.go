@@ -2,16 +2,15 @@ package main
 
 import (
 	"context"
+	"fmt"
+	"plog_gateway/handler"
 	plog_gateway "plog_gateway/proto"
-
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
 )
 
 type PLogGatewayServer struct {
 }
 
 func (PLogGatewayServer) UploadLog(ctx context.Context, req *plog_gateway.UploadLogRequest) (resp *plog_gateway.UploadLogResponse, err error) {
-
-	return nil, status.Errorf(codes.Unimplemented, "method UploadLog not implemented")
+	fmt.Println("UploadLog called")
+	return handler.UploadLog(ctx, req)
 }
