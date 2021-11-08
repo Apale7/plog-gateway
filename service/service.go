@@ -1,7 +1,9 @@
 package service
 
-import ()
+import "plog_gateway/redis"
 
 func UploadLog() {
 
 }
+
+func SendRedis() {}
