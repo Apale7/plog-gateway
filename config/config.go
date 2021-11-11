@@ -11,7 +11,7 @@ var (
 )
 
 func Init() Conf {
-	viper.AddConfigPath("../conf")
+	viper.AddConfigPath("./conf")
 	conf = GetConfig()
 	return conf
 }
