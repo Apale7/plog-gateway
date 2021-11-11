@@ -17,11 +17,13 @@ var (
 	err      error
 )
 
-func Init() {
-	conf = config.Init()
-}
+const (
+	Redis   = "redis"
+	MongoDb = "mongo"
+)
 
-func dialMongo() *mongo.Client {
+func DialMongo() *mongo.Client {
+	conf = config.Init()
 	clientOptions := options.Client().ApplyURI(conf.MongoDb.Uri)
 	mgoCli, err = mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
@@ -36,7 +38,8 @@ func dialMongo() *mongo.Client {
 	return mgoCli
 }
 
-func dialRedis() *redis.Client {
+func DialRedis() *redis.Client {
+	conf = config.Init()
 	redisCli = redis.NewClient(&redis.Options{
 		Addr:     conf.Redis.Addr,
 		DB:       conf.Redis.Db,

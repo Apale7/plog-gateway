@@ -30,7 +30,9 @@ func main() {
 	server := grpc.NewServer()
 	plog_gateway.RegisterPLogGatewayServer(server, &PLogGatewayServer{})
 	logrus.Infof("server listen at %s", lis.Addr().String())
-	server.Serve(lis)
+	if err := server.Serve(lis); err != nil {
+		logrus.Fatalf("failed to serve: %+v", err)
+	}
 }
 
 func init() {
