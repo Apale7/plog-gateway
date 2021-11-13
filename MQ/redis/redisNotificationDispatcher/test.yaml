@@ -1,0 +1,7 @@
+redis:
+  -
+    alias:  default
+    host:   47.112.176.20
+    port:   6379
+    password:   iwala.net..
+    max_idles:  30
